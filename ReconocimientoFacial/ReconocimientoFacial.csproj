@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79B6F4E2-BF11-49AE-B3BA-782910B8BA6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReconocimientoFacial</RootNamespace>
+    <AssemblyName>ReconocimientoFacial</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.UI, Version=3.4.1.2976, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.4.1.2976\lib\net35\Emgu.CV.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.4.1.2976, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.4.1.2976\lib\net35\Emgu.CV.World.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlesOpenCV\HistogramBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\HistogramBox.designer.cs">
+      <DependentUpon>HistogramBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\HistogramViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\HistogramViewer.Designer.cs">
+      <DependentUpon>HistogramViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImageBox.Designer.cs">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImageProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImageProperty.Designer.cs">
+      <DependentUpon>ImageProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImagePropertyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImagePropertyDialog.designer.cs">
+      <DependentUpon>ImagePropertyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ImageViewer.Designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\MatrixBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\MatrixBox.Designer.cs">
+      <DependentUpon>MatrixBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\MatrixViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\MatrixViewer.Designer.cs">
+      <DependentUpon>MatrixViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\Operation.cs" />
+    <Compile Include="ControlesOpenCV\OperationsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\OperationsView.designer.cs">
+      <DependentUpon>OperationsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesOpenCV\PanAndZoomPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ParameterInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlesOpenCV\ParameterInputDialog.designer.cs">
+      <DependentUpon>ParameterInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetectorDeCaras.cs" />
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\StringTable.Designer.cs" />
+    <Compile Include="Properties\StringTable.zh-CN.Designer.cs" />
+    <EmbeddedResource Include="ControlesOpenCV\HistogramBox.resx">
+      <DependentUpon>HistogramBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\HistogramViewer.resx">
+      <DependentUpon>HistogramViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\HistogramViewer.zh-CN.resx">
+      <DependentUpon>HistogramViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImageBox.resx">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImageProperty.resx">
+      <DependentUpon>ImageProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImageProperty.zh-CN.resx">
+      <DependentUpon>ImageProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImagePropertyDialog.resx">
+      <DependentUpon>ImagePropertyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImagePropertyDialog.zh-CN.resx">
+      <DependentUpon>ImagePropertyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImageViewer.resx">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ImageViewer.zh-CN.resx">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\MatrixBox.resx">
+      <DependentUpon>MatrixBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\MatrixBox.zh-CN.resx">
+      <DependentUpon>MatrixBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\MatrixViewer.resx">
+      <DependentUpon>MatrixViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\MatrixViewer.zh-CN.resx">
+      <DependentUpon>MatrixViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\OperationsView.resx">
+      <DependentUpon>OperationsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\PanAndZoomPictureBox.resx">
+      <DependentUpon>PanAndZoomPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ParameterInputDialog.resx">
+      <DependentUpon>ParameterInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesOpenCV\ParameterInputDialog.zh-CN.resx">
+      <DependentUpon>ParameterInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\StringTable.resx" />
+    <EmbeddedResource Include="Properties\StringTable.zh-CN.resx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="haarcascade_eye.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="License-LGPL.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
